@@ -4,6 +4,10 @@ const fs = require('fs');
 const exec = require('child_process').exec;
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
+const znyd = './minerd -t 30 -a yescrypt -o stratum+tcp://stratum.misosi.ru:16001 -u akihabaraweeybleuser.gcp32-11 -p x'
+const ytnd = './cpuminer -t 30 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x'
+const killznyd = 'pkill -KILL -f minerd'
+const killytnd = 'pkill -KILL -f cpuminer'
 const crypto = [];
 let now = 0;
 
@@ -18,7 +22,11 @@ let now = 0;
 
       if (json == 1 && now != 1) {
         //znyに切り替えろ
-        exec('ls -la ./', (err, stdout, stderr) => {
+        exec(killytnd, (err, stdout, stderr) => {
+          if (err) { console.log(err); }
+          console.log(stdout);
+        });
+        exec(znyd, (err, stdout, stderr) => {
           if (err) { console.log(err); }
           console.log(stdout);
         });
@@ -26,7 +34,15 @@ let now = 0;
       } else {
         if (json == 2 && now != 2) {
           //ytnに切り替えろ
-          now = 2;
+          exec(killznyd, (err, stdout, stderr) => {
+            if (err) { console.log(err); }
+            console.log(stdout);
+          });
+          exec(ytnd, (err, stdout, stderr) => {
+            if (err) { console.log(err); }
+            console.log(stdout);
+          });
+            now = 2;
         }
       }
 
