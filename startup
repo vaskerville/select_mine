@@ -1,0 +1,6 @@
+# !/bin/bash
+cd /home/baskerville_minor/
+rm -rf /home/baskerville_minor/select_mine
+git clone https://github.com/vaskerville/select_mine
+cd /home/baskerville_minor/select_mine
+node /home/baskerville_minor/select_mine/client.js
