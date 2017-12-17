@@ -6,8 +6,8 @@ const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
 const znyd = './minerd -t 30 -a yescrypt -o stratum+tcp://stratum.misosi.ru:16001 -u akihabaraweeybleuser.gcp32-11 -p x'
 const ytnd = './cpuminer -t 30 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x'
-const killznyd = 'pkill -KILL -f minerd'
-const killytnd = 'pkill -KILL -f cpuminer'
+const killznyd = './yenten'
+const killytnd = './bitzeny'
 const crypto = [];
 let now = 0;
 
@@ -26,10 +26,6 @@ let now = 0;
           if (err) { console.log(err); }
           console.log(stdout);
         });
-        exec(znyd, (err, stdout, stderr) => {
-          if (err) { console.log(err); }
-          console.log(stdout);
-        });
         now = 1;
       } else {
         if (json == 2 && now != 2) {
@@ -38,16 +34,12 @@ let now = 0;
             if (err) { console.log(err); }
             console.log(stdout);
           });
-          exec(ytnd, (err, stdout, stderr) => {
-            if (err) { console.log(err); }
-            console.log(stdout);
-          });
             now = 2;
         }
       }
 
       console.log(now)
-      await sleep(1000 * 10);
+      await sleep(1000 * 600);
 
       // 初期化して繰り返し
 
