@@ -1,0 +1,29 @@
+{
+  "name": "select_mine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@google-cloud/compute": "^0.9.0",
+    "cheerio-httpcli": "^0.7.2",
+    "date-utils": "^1.2.21",
+    "fetch": "^1.1.0",
+    "googleapis": "^23.0.0",
+    "node-fetch": "^1.7.3",
+    "stratum": "^0.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaskerville/select_mine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaskerville/select_mine/issues"
+  },
+  "homepage": "https://github.com/vaskerville/select_mine#readme"
+}
