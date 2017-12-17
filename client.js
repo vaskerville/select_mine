@@ -1,14 +1,10 @@
 'use strict';
 const fetch = require('node-fetch');
-const fs = require('fs');
 const exec = require('child_process').exec;
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
-const znyd = './minerd -t 14 -a yescrypt -o stratum+tcp://stratum.misosi.ru:16001 -u akihabaraweeybleuser.gcp32-11 -p x'
-const ytnd = './cpuminer -t 14 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x'
 const killznyd = './yenten'
 const killytnd = './bitzeny'
-const crypto = [];
 let now = 0;
 
 (async() => {
@@ -41,19 +37,8 @@ let now = 0;
       console.log(now)
       await sleep(1000 * 600);
 
-      // 初期化して繰り返し
-
-
     }
   } catch (error) {
     console.log(error);
   }
 })();
-
-function appendFile(path, data) {
-  fs.appendFile(path, data, function (err) {
-    if (err) {
-      throw err;
-    }
-  });
-}
