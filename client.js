@@ -61,7 +61,7 @@ let stop = 0;
               stop = 0;
             }
 
-          await sleep(1000 * 5);
+          await sleep(1000 * 60);
 
         }
       } catch (error) {
