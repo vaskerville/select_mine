@@ -1,5 +1,3 @@
-import { lstat } from 'fs';
-
 'use strict';
 const fetch = require('node-fetch');
 const exec = require('child_process').exec;
