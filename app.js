@@ -7,15 +7,9 @@ const appendfile = './Bitzeny_vs_Yenten.csv';
 const publicfile = '../htdocs/select_this';
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
-<<<<<<< HEAD
-// crypto = 0:znydiff,1:ytndiff,2:bitcoin価格.3:zny価格,4:ytn価格,5:znykhday,6:ytnkhday,]
 const crypto = [];
 
 
-=======
-const crypto = [];
-
->>>>>>> e9a59bee7331d4b57e3b0a79ee955743ef023b68
 // 謎のパラメーター群
 const zeny_gets = 62.5;
 const yenten_gets = 50;
@@ -86,11 +80,7 @@ const yenten_hashcost = 242.143;
         select = 0;
       } else {
         // znyを選べ
-<<<<<<< HEAD
-        if (crypto[11] - crypt[10] < 0) {
-=======
         if (crypto[11] - crypto[10] < 0) {
->>>>>>> e9a59bee7331d4b57e3b0a79ee955743ef023b68
           select = 1;
         } else {
         // ytnを選べ

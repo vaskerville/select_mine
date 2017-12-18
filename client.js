@@ -1,7 +1,12 @@
+import { lstat } from 'fs';
+
 'use strict';
 const fetch = require('node-fetch');
 const exec = require('child_process').exec;
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+const fs = require('fs');
+require('date-utils');
+const errorfile = './error.log';
 
 const killznyd = './yenten'
 const killytnd = './bitzeny'
@@ -39,6 +44,18 @@ let now = 0;
 
     }
   } catch (error) {
+    let date = new Date();
+    let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
+    let errortowtite = formattedDate + error;
+    appendFile(errorfile, error);
     console.log(error);
   }
 })();
+
+function appendFile(path, data) {
+  fs.appendFile(path, data, function (err) {
+    if (err) {
+      throw err;
+    }
+  });
+}
