@@ -10,10 +10,7 @@
     "fetch": "^1.1.0",
     "googleapis": "^23.0.0",
     "node-fetch": "^1.7.3",
-<<<<<<< HEAD
-    "puppeteer": "^0.13.0",
-=======
->>>>>>> e9a59bee7331d4b57e3b0a79ee955743ef023b68
+    "ps-list": "^4.0.0",
     "stratum": "^0.2.4"
   },
   "devDependencies": {},

@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 const exec = require('child_process').exec;
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 const fs = require('fs');
+const psList = require('ps-list');
 require('date-utils');
 const errorfile = './error.log';
 
@@ -22,7 +23,9 @@ let now = 0;
       if (json == 1 && now != 1) {
         //znyに切り替えろ
         exec(killytnd, (err, stdout, stderr) => {
-          if (err) { console.log(err); }
+          if (err) {
+            console.log(err);
+          }
           console.log(stdout);
         });
         now = 1;
@@ -30,15 +33,26 @@ let now = 0;
         if (json == 2 && now != 2) {
           //ytnに切り替えろ
           exec(killznyd, (err, stdout, stderr) => {
-            if (err) { console.log(err); }
+            if (err) {
+              console.log(err);
+            }
             console.log(stdout);
           });
-            now = 2;
+          now = 2;
         }
       }
 
-      console.log(now)
-      await sleep(1000 * 600);
+      psList().then(data => {
+        let newLine = data.filter(function (item, index) {
+          if (item.name == 'cpuminer' || item.name == 'minerd') return true;
+        });
+        console.log(newLine);
+        if (Object.keys(newLine).length === 0){
+          now = 0;
+        }
+      });
+
+      await sleep(1000 * 60);
 
     }
   } catch (error) {
@@ -57,3 +71,6 @@ function appendFile(path, data) {
     }
   });
 }
+
+
+
