@@ -21,7 +21,7 @@ let stop = 0;
         let json = await response.text();
         console.log(json);
 
-        if (json == 1 && (now != 1 || stop == 1) { // go znyかつ、今は2もしくはstopフラグあり
+        if (json == 1 && (now != 1 || stop == 1)) { // go znyかつ、今は2もしくはstopフラグあり
             //znyに切り替えろ
             exec(killytnd, (err, stdout, stderr) => {
               if (err) {
