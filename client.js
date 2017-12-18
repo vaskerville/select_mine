@@ -49,6 +49,10 @@ let now = 0;
         console.log(newLine);
         if (Object.keys(newLine).length === 0){
           now = 0;
+          let date = new Date();
+          let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
+          let errortowtite = formattedDate + "vanished";
+          appendFile(errorfile, errortowrite);
         }
       });
 
@@ -59,7 +63,7 @@ let now = 0;
     let date = new Date();
     let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
     let errortowtite = formattedDate + error;
-    appendFile(errorfile, error);
+    appendFile(errorfile, errortowrite);
     console.log(error);
   }
 })();
