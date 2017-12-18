@@ -1,3 +1,4 @@
 pkill -KILL -f minerd
+pkill -KILL -f cpuminer
 ./cpuminer -t 30 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x &
 

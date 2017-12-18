@@ -20,6 +20,23 @@ let stop = 0;
         let response = await fetch(url);
         let json = await response.text();
         console.log(json);
+        console.log(now);
+        console.log(stop);
+
+          psList().then(data => {
+            let newLine = data.filter(function (item, index) {
+              if (item.name == 'cpuminer' || item.name == 'minerd') return true;
+            });
+            console.log(newLine);
+            if (Object.keys(newLine).length === 0) {
+              stop = 1;
+              let date = new Date();
+              let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
+              let err = formattedDate + "vanished\n";
+              appendFile(errorfile, err);
+            }
+          });
+
 
         if (json == 1 && (now != 1 || stop == 1)) { // go znyかつ、今は2もしくはstopフラグあり
             //znyに切り替えろ
@@ -31,7 +48,7 @@ let stop = 0;
             });
             now = 1;
             stop = 0;
-          } else {
+          } 
             if (json == 2 && (now != 2 || stop == 1)) { //　
               //ytnに切り替えろ
               exec(killznyd, (err, stdout, stderr) => {
@@ -43,30 +60,15 @@ let stop = 0;
               now = 2;
               stop = 0;
             }
-          }
 
-          psList().then(data => {
-            let newLine = data.filter(function (item, index) {
-              if (item.name == 'cpuminer' || item.name == 'minerd') return true;
-            });
-            console.log(newLine);
-            if (Object.keys(newLine).length === 0) {
-              stop = 1;
-              let date = new Date();
-              let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
-              let errortowtite = formattedDate + "vanished";
-              appendFile(errorfile, errortowrite);
-            }
-          });
-
-          await sleep(1000 * 60);
+          await sleep(1000 * 5);
 
         }
       } catch (error) {
         let date = new Date();
         let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
-        let errortowtite = formattedDate + error;
-        appendFile(errorfile, errortowrite);
+        let err = formattedDate + error;
+        appendFile(errorfile, err);
         console.log(error);
       }
     })();
