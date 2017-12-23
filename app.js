@@ -76,7 +76,7 @@ const yenten_hashcost = 242.143;
 
       let select = 0;
       // どちらもマイナスなら止めろ
-      if (crypto[10] < 0 && crypto[11] < 0) {
+      if (crypto[10] < 500 && crypto[11] < 500) {
         select = 0;
       } else {
         // znyを選べ
