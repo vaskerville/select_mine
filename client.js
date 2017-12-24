@@ -7,9 +7,10 @@ const psList = require('ps-list');
 require('date-utils');
 const errorfile = './error.log';
 
-const startytn = './yenten'
-const startzny = './bitzeny'
-const startkoto = './koto'
+const startytn = './yenten';
+const startzny = './bitzeny';
+const startkoto = './koto';
+const seconds = 60;
 
 let now = 0;
 let stop = 0;
@@ -33,7 +34,7 @@ let stop = 0;
             if (Object.keys(newLine).length === 0) {
               stop = 1;
               let date = new Date();
-              let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
+              let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS");
               let err = formattedDate + "vanished\n";
               appendFile(errorfile, err);
             }
@@ -75,7 +76,7 @@ let stop = 0;
               stop = 0;
             }
 
-          await sleep(1000 * 60);
+          await sleep(1000 * seconds);
 
         }
       } catch (error) {
