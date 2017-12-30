@@ -1,4 +1,6 @@
 pkill -KILL -f minerd
 pkill -KILL -f cpuminer
+pkill -KILL -f koto-mnrd
+pkill -KILL -f zoin-mnrd
 ./cpuminer -t 15 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x &
 

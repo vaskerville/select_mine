@@ -1,5 +1,7 @@
 pkill -KILL -f cpuminer
 pkill -KILL -f minerd
+pkill -KILL -f koto-mnrd
+pkill -KILL -f zoin-mnrd
 #./minerd -t 15 -a yescrypt -o stratum+tcp://stratum.misosi.ru:16001 -u akihabaraweeybleuser.gcp32-11 -p x &
 ./minerd -t 15 -a yescrypt -o stratum+tcp://zny.arunyastyle.com:19666 -u extremebignose.strong -p x &
 

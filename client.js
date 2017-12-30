@@ -29,7 +29,7 @@ let stop = 0;
 
           psList().then(data => {
             let newLine = data.filter(function (item, index) {
-              if (item.name == 'cpuminer' || item.name == 'minerd' || item.name == 'koto-mnrd' || item.name == 'koto-mnrd') return true;
+              if (item.name == 'cpuminer' || item.name == 'minerd' || item.name == 'koto-mnrd' || item.name == 'zoin-mnrd') return true;
             });
             console.log(newLine);
             if (Object.keys(newLine).length === 0) {

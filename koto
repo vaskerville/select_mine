@@ -1,6 +1,7 @@
 pkill -KILL -f cpuminer
 pkill -KILL -f minerd
 pkill -KILL -f koto-mnrd
+pkill -KILL -f zoin-mnrd
 #./koto-mnrd -t 15 -a yescrypt -o stratum+tcp://150.95.187.233:3032 -u k14b9o9SzXrZjekE5CubUs51qiFq3btWwLo -p x &
 #./koto-mnrd -t 15 -a yescrypt -o stratum+tcp://okoto.xyz:51000 -u k14b9o9SzXrZjekE5CubUs51qiFq3btWwLo -p x &
 ./koto-mnrd -t 15 -a yescrypt -o stratum+tcp://kotopool.work:3334 -u k14b9o9SzXrZjekE5CubUs51qiFq3btWwLo -p x &
