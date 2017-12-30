@@ -10,6 +10,7 @@ const errorfile = './error.log';
 const startytn = './yenten';
 const startzny = './bitzeny';
 const startkoto = './koto';
+const startzoin = './zoin';
 const seconds = 60;
 
 let now = 0;
@@ -66,7 +67,7 @@ let stop = 0;
 
             if (json == 0 && (now != 0 || stop == 1)) { //　
               //kotoに切り替えろ
-              exec(startkoto, (err, stdout, stderr) => {
+              exec(startzoin, (err, stdout, stderr) => {
                 if (err) {
                   console.log(err);
                 }
