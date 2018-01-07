@@ -23,9 +23,9 @@ let stop = 0;
         let url = 'http://www3.eltrans.jp/select_this';
         let response = await fetch(url);
         let json = await response.text();
-        console.log(json);
-        console.log(now);
-        console.log(stop);
+        console.log("json:" + json);
+        console.log("now:" + now);
+        console.log("stop:" + stop);
 
           psList().then(data => {
             let newLine = data.filter(function (item, index) {
@@ -77,7 +77,7 @@ let stop = 0;
               stop = 0;
             }
 
-          await sleep(1000 * seconds);
+          await sleep(100 * seconds);
 
         }
       } catch (error) {
