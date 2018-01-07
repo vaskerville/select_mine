@@ -27,45 +27,42 @@ let stop = 0;
         console.log("now:" + now);
         console.log("stop:" + stop);
 
-          psList().then(data => {
-            let newLine = data.filter(function (item, index) {
-              if (item.name == 'cpuminer' || item.name == 'minerd' || item.name == 'koto-mnrd' || item.name == 'zoin-mnrd') return true;
-            });
-            console.log(newLine);
-            if (Object.keys(newLine).length === 0) {
-              stop = 1;
-              let date = new Date();
-              let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS");
-              let err = formattedDate + "vanished\n";
-              appendFile(errorfile, err);
-            }
+        psList().then(data => {
+          let newLine = data.filter(function (item, index) {
+            if (item.name == 'cpuminer' || item.name == 'minerd' || item.name == 'koto-mnrd' || item.name == 'zoin-mnrd') return true;
           });
+          console.log(newLine);
+          if (Object.keys(newLine).length === 0) {
+            stop = 1;
+            let date = new Date();
+            let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS");
+            let err = formattedDate + "vanished\n";
+            appendFile(errorfile, err);
+          }
+        });
 
 
         if (json == 1 && (now != 1 || stop == 1)) { // go znyかつ、今は2もしくはstopフラグあり
-            //znyに切り替えろ
-            exec(startzny, (err, stdout, stderr) => {
+          //znyに切り替えろ
+          exec(startzny, (err, stdout, stderr) => {
+            if (err) {
+              console.log(err);
+            }
+            console.log(stdout);
+          });
+          now = 1;
+          stop = 0;
+        } else if (json == 2 && (now != 2 || stop == 1)) { //　
+            //ytnに切り替えろ
+            exec(startytn, (err, stdout, stderr) => {
               if (err) {
                 console.log(err);
               }
               console.log(stdout);
             });
-            now = 1;
+            now = 2;
             stop = 0;
-          } 
-            if (json == 2 && (now != 2 || stop == 1)) { //　
-              //ytnに切り替えろ
-              exec(startytn, (err, stdout, stderr) => {
-                if (err) {
-                  console.log(err);
-                }
-                console.log(stdout);
-              });
-              now = 2;
-              stop = 0;
-            }
-
-            if (json == 0 && (now != 0 || stop == 1)) { //　
+          } else if (json == 0 && (now != 0 || stop == 1)) { //　
               //kotoに切り替えろ
               exec(startzoin, (err, stdout, stderr) => {
                 if (err) {
@@ -76,10 +73,9 @@ let stop = 0;
               now = 0;
               stop = 0;
             }
+          }
+        await sleep(100 * seconds);
 
-          await sleep(100 * seconds);
-
-        }
       } catch (error) {
         let date = new Date();
         let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
