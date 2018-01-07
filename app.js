@@ -39,12 +39,6 @@ const yenten_hashcost = 242.143;
       json = await response.json();
       crypto.push(json.getpoolstatus.data.networkdiff);
 
-      // 3:zoin難易度
-      url = 'https://ytn.misosi.ru/index.php?page=api&action=getpoolstatus&api_key=08df0632ccd6c4fdb2829f22eb2f6d004e25ed185abb1d30636aa1c83434d252';
-      response = await fetch(url);
-      json = await response.json();
-      crypto.push(json.getpoolstatus.data.networkdiff);
-
       // 3:bitcoin価格
       url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
       response = await fetch(url);
@@ -57,13 +51,6 @@ const yenten_hashcost = 242.143;
       json = await response.then(function (result) {
         crypto.push(result.$('.uk-overflow-auto tr td').eq(2).text());
       });
-
-      // 5:yenten価格
-      url = 'https://coinmarketcap.com/currencies/yenten/#charts';                     
-      response = cheerio.fetch(url);                                                   
-      json = await response.then(function (result) {                                   
-      crypto.push(result.$('.details-text-medium').eq(1).text().replace(/ BTC/g, ""));   
-      });                                                                                  
 
       // 5:yenten価格
       url = 'https://coinmarketcap.com/currencies/yenten/#charts';                     
