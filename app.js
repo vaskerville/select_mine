@@ -88,7 +88,7 @@ const yenten_hashcost = 242.143;
         }
       }
 
-      appendFile(publicfile, select);
+      writeFile(publicfile, select);
 
       await sleep(1000 * 120);
 
@@ -104,6 +104,14 @@ function appendFile(path, data) {
   fs.appendFile(path, data, function (err) {
     if (err) {
       throw err;
+    }
+  });
+}
+
+function writeFile(path, data) {
+  fs.writeFile(path, data, function (err) {
+    if (err) {
+        throw err;
     }
   });
 }

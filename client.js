@@ -56,9 +56,9 @@ let stop = 0;
             //ytnに切り替えろ
             exec(startytn, (err, stdout, stderr) => {
               if (err) {
-                console.log(err);
+                console.log("yenten" + err);
               }
-              console.log(stdout);
+              console.log("yenten" + stdout);
             });
             now = 2;
             stop = 0;
@@ -72,16 +72,17 @@ let stop = 0;
               });
               now = 0;
               stop = 0;
+            } else {
+              console.log("wow");
             }
-          }
         await sleep(100 * seconds);
-
+          }
       } catch (error) {
         let date = new Date();
         let formattedDate = date.toFormat("YYYY/MM/DD HH24:MI:SS")
         let err = formattedDate + error;
         appendFile(errorfile, err);
-        console.log(error);
+        console.log("catch" + error);
       }
     })();
 
