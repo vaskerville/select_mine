@@ -28,16 +28,17 @@ const yenten_hashcost = 242.143;
       crypto.push(formattedDate);
 
       // 1:zeny難易度
-      let url = 'https://soup.misosi.ru/index.php?page=api&action=getpoolstatus&api_key=a8c9c9405ad7ecbef3d976f63c218815d036b5e450db9c65f3d6732f7532b72a';
-      let response = await fetch(url);
-      let json = await response.json();
-      crypto.push(json.getpoolstatus.data.networkdiff);
+      let url = 'https://lapool.me/bitzeny/index.php?page=statistics&action=pool';
+      let response = cheerio.fetch(url);
+      let json = await response.then(function (result) {
+      crypto.push(result.$('td a span').text());
+      });
 
       // 2:yenten難易度
-      url = 'https://ytn.misosi.ru/index.php?page=api&action=getpoolstatus&api_key=08df0632ccd6c4fdb2829f22eb2f6d004e25ed185abb1d30636aa1c83434d252';
+      url = 'http://yenten-blockexplorer.chocottokozukai.click/ext/summary';
       response = await fetch(url);
       json = await response.json();
-      crypto.push(json.getpoolstatus.data.networkdiff);
+      crypto.push(json.data[0].difficulty);
 
       // 3:bitcoin価格
       url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
