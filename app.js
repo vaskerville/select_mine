@@ -1,6 +1,7 @@
 'use strict';
 const fetch = require('node-fetch');
 const cheerio = require('cheerio-httpcli');
+const exec = require('child_process').exec;
 const fs = require('fs');
 require('date-utils');
 const appendfile = './Bitzeny_vs_Yenten.csv';
@@ -9,6 +10,8 @@ const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
 const crypto = [];
 
+const delgroup = './delgroup';
+const creategroup = './creategroup';
 
 // 謎のパラメーター群
 const zeny_gets = 62.5;
@@ -18,6 +21,10 @@ const zeny_hash = 12;
 const yenten_hash = 2.8;
 const zeny_hashcost = 56.5;
 const yenten_hashcost = 242.143;
+
+const zeny_ave = [500,500,500,500,500,500,500,500,500,500];
+const yenten_ave = [500,500,500,500,500,500,500,500,500,500];
+
 
 (async() => {
   try {
@@ -72,6 +79,15 @@ const yenten_hashcost = 242.143;
       crypto.push((crypto[8] - zeny_hashcost) * zeny_hash * 10);
       crypto.push((crypto[9] - yenten_hashcost) * yenten_hash * 10);
 
+      // 12:13 移動平均
+      zeny_ave.push(crypto[10]);
+      zeny_ave.shift();
+      crypto.push(average(zeny_ave));
+      yenten_ave.push(crypto[11]);
+      yenten_ave.shift();
+      crypto.push(average(yenten_ave));
+
+
       appendFile(appendfile, crypto + '\n');
       console.log(crypto);
 
@@ -116,3 +132,18 @@ function writeFile(path, data) {
     }
   });
 }
+
+const average = function(arr, fn) {
+    return sum(arr, fn)/arr.length;
+};
+
+const sum = function(arr, fn) {
+	    if (fn) {
+		            return sum(arr.map(fn));
+		        }
+	    else {
+		            return arr.reduce(function(prev, current, i, arr) {
+				                    return prev+current;
+				            });
+		        }
+};
