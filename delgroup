@@ -1,0 +1,2 @@
+gcloud compute instance-groups managed delete us1 us2 us3 asia1 asia2 asia3 euro1 euro2 euro3 nus sus
+
