@@ -22,8 +22,8 @@ const yenten_hash = 2.8;
 const zeny_hashcost = 56.5;
 const yenten_hashcost = 242.143;
 
-const zeny_ave = [500,500,500,500,500,500,500,500,500,500];
-const yenten_ave = [500,500,500,500,500,500,500,500,500,500];
+const zeny_ave = [];
+const yenten_ave = [];
 
 
 (async() => {
@@ -81,10 +81,10 @@ const yenten_ave = [500,500,500,500,500,500,500,500,500,500];
 
       // 12:13 移動平均
       zeny_ave.push(crypto[10]);
-      zeny_ave.shift();
+      if (zeny_ave.length > 10) {zeny_ave.shift();}
       crypto.push(average(zeny_ave));
       yenten_ave.push(crypto[11]);
-      yenten_ave.shift();
+      if (yenten_ave.length > 10) {yenten_ave.shift();}
       crypto.push(average(yenten_ave));
 
 
@@ -93,7 +93,7 @@ const yenten_ave = [500,500,500,500,500,500,500,500,500,500];
 
       let select = 0;
       // どちらもマイナスなら止めろ
-      if (crypto[10] < 500 && crypto[11] < 500) {
+      if (crypto[12] < 500 && crypto[13] < 500) {
         select = 0;
       } else {
         // znyを選べ
