@@ -7,10 +7,10 @@ const psList = require('ps-list');
 require('date-utils');
 const errorfile = './error.log';
 
-const startytn = './yenten';
-const startzny = './bitzeny';
-const startkoto = './koto';
-const startzoin = './zoin';
+const startytn = './minerchange yenten';
+const startzny = './minerchange bitzeny';
+const startkoto = './minerchange koto';
+const startzoin = './minerchange zoin';
 const seconds = 60;
 
 let now = 0;
