@@ -1,12 +1,12 @@
-gcloud compute instance-groups managed create us1 --region us-central1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create us2 --region us-east1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create us3 --region us-west1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create asia1 --region asia-east1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create asia2 --region asia-south1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create asia3 --region asia-southeast1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create euro1 --region europe-west1 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create euro2 --region europe-west2 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create euro3 --region europe-west3 --template cpu16-2 --size 8 --quiet
-gcloud compute instance-groups managed create nus --region northamerica-northeast1 --template cpu16-2 --size 1 --quiet
-gcloud compute instance-groups managed create sus --region southamerica-east1 --template cpu16-2 --size 8 --quiet
+gcloud compute instance-groups managed create us1 --region us-central1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create us2 --region us-east1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create us3 --region us-west1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create asia1 --region asia-east1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create asia2 --region asia-south1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create asia3 --region asia-southeast1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create euro1 --region europe-west1 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create euro2 --region europe-west2 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create euro3 --region europe-west3 --template cpu16-2 --size 8 --quiet &
+gcloud compute instance-groups managed create nus --region northamerica-northeast1 --template cpu16-2 --size 1 --quiet &
+gcloud compute instance-groups managed create sus --region southamerica-east1 --template cpu16-2 --size 8 --quiet &
 
