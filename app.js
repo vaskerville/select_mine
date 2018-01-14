@@ -94,7 +94,7 @@ const yenten_ave = [];
 
       let select = 0;
       // どちらもマイナスなら止めろ
-      if (crypto[12] < 500 && crypto[13] < 500) {
+      if (crypto[10] < 0 && crypto[11] < 0) {
         select = 0;
       } else {
         // znyを選べ
@@ -104,6 +104,25 @@ const yenten_ave = [];
         // ytnを選べ
           select = 2;
         }
+      }
+
+      //about instance
+      if (crypto[12] < 2000 && crypto[13] < 2000) {
+        exec(delgroup, (err, stdout, stderr) => {
+           if (err) {
+                console.log(err);
+	              }
+                 console.log(stdout);
+        });
+      }
+
+      if (crypto[12] > 5000 || crypto[13] > 5000) {
+        exec(creategroup, (err, stdout, stderr) => {
+           if (err) {
+                console.log(err);
+	              }
+                 console.log(stdout);
+        });
       }
 
       writeFile(publicfile, select);

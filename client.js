@@ -64,7 +64,7 @@ let stop = 0;
             stop = 0;
           } else if (json == 0 && (now != 0 || stop == 1)) { //　
               //kotoに切り替えろ
-              exec(startzoin, (err, stdout, stderr) => {
+              exec(startkoto, (err, stdout, stderr) => {
                 if (err) {
                   console.log(err);
                 }
