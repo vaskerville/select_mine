@@ -14,15 +14,15 @@ pkill -KILL -f zoin-mnrd
 
 if [ $1 == "bitzeny" ]
     then
-       bitzeny 
+       $bitzeny 
        echo "bitzeny"
 elif [ $1 == "yenten" ]
     then
-       yenten 
+       $yenten 
        echo "yenten"
 elif [ $1 == "koto" ]
     then
-       koto
+       $koto
        echo "koto"
 fi
 
