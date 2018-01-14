@@ -1,9 +1,5 @@
-pkill -KILL -f minerd
-pkill -KILL -f cpuminer
-pkill -KILL -f koto-mnrd
-pkill -KILL -f zoin-mnrd
-#./cpuminer -t 15 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x &
-#./cpuminer -t 15 -a yescryptr16 -o stratum+tcp://mining.bunnymining.work:20334 -u AkihabaraWeeybleUser.strong -p x &
-#./cpuminer -t 15 -a yescryptr16 -o stratum+tcp://yenten.bluepool.info:9001 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p x &
-./cpuminer -t 15 -a yescryptr16 -o stratum+tcp://lycheebit.com:6235 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p c=YTN &
+#./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x &
+#./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://mining.bunnymining.work:20334 -u AkihabaraWeeybleUser.strong -p x &
+#./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://yenten.bluepool.info:9001 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p x &
+./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://lycheebit.com:6235 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p c=YTN &
 
