@@ -107,7 +107,7 @@ const yenten_ave = [];
       }
 
       //about instance
-      if (crypto[12] < 2000 && crypto[13] < 2000) {
+      if (crypto[12] < 1000 && crypto[13] < 1000) {
         exec(delgroup, (err, stdout, stderr) => {
            if (err) {
                 console.log(err);
