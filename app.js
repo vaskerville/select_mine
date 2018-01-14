@@ -6,6 +6,7 @@ const fs = require('fs');
 require('date-utils');
 const appendfile = './Bitzeny_vs_Yenten.csv';
 const publicfile = '../htdocs/select_this';
+const profit = '../htdocs/profit';
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
 const crypto = [];
@@ -106,6 +107,7 @@ const yenten_ave = [];
       }
 
       writeFile(publicfile, select);
+      writeFile(profit, crypto);
 
       await sleep(1000 * 120);
 
