@@ -73,7 +73,7 @@ let stop = 0;
               now = 0;
               stop = 0;
             } else {
-              console.log("wow");
+              console.log("現状維持");
             }
         await sleep(100 * seconds);
           }
