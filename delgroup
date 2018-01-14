@@ -1,2 +1,12 @@
-gcloud compute instance-groups managed delete us1 us2 us3 asia1 asia2 asia3 euro1 euro2 euro3 nus sus
+gcloud compute instance-groups managed delete us1 --region us-central1 --quiet
+gcloud compute instance-groups managed delete us2 --region us-east1 --quiet
+gcloud compute instance-groups managed delete us3 --region us-west1 --quiet
+gcloud compute instance-groups managed delete asia1 --region asia-east1 --quiet
+gcloud compute instance-groups managed delete asia2 --region asia-south1 --quiet
+gcloud compute instance-groups managed delete asia3 --region asia-southeast1 --quiet
+gcloud compute instance-groups managed delete euro1 --region europe-west1 --quiet
+gcloud compute instance-groups managed delete euro2 --region europe-west2 --quiet
+gcloud compute instance-groups managed delete euro3 --region europe-west3 --quiet
+gcloud compute instance-groups managed delete nus --region northamerica-northeast1 --quiet
+gcloud compute instance-groups managed delete sus --region southamerica-east1 --quiet
 
