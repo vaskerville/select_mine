@@ -3,8 +3,8 @@ bitzeny="./bitzeny-mnrd -t 15 -a yescrypt -o stratum+tcp://zny.arunyastyle.com:1
 #yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://stratum.misosi.ru:16011 -u AkihabaraWeeybleUser.gcp32-11 -p x"
 #yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://mining.bunnymining.work:20334 -u AkihabaraWeeybleUser.strong -p x"
 #yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://yenten.bluepool.info:9001 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p x"
-#yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://lycheebit.com:6235 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p c=YTN"
-yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://s.antminepool.com:6235 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p c=YTN"
+yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://lycheebit.com:6235 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p c=YTN"
+#yenten="./yenten-mnrd -t 15 -a yescryptr16 -o stratum+tcp://s.antminepool.com:6235 -u YjxVtatJwAybaruVN8a2aNfwrR8c7NX15x -p c=YTN"
 koto="./koto-mnrd -t 15 -a yescrypt -o stratum+tcp://kotopool.work:3334 -u k14b9o9SzXrZjekE5CubUs51qiFq3btWwLo -p x"
 zoin=""
 
