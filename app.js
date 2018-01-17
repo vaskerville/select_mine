@@ -17,7 +17,7 @@ const creategroup = './creategroup';
 // 謎のパラメーター群
 const zeny_gets = 62.5;
 const yenten_gets = 50;
-const dollar = 113;
+const dollar = 110;
 const zeny_hash = 12;
 const yenten_hash = 2.8;
 const zeny_hashcost = 56.5;
