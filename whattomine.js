@@ -29,7 +29,7 @@ const crypto = [];
       appendFile(appendfile, crypto + '\n');
       console.log(crypto);
 
-      await sleep(1000 * 120);
+      await sleep(1000 * 600);
 
       // 初期化して繰り返し
       crypto.length = 0;
