@@ -23,7 +23,7 @@ const crypto = [];
       let a=result.$('table td strong').text().split('\n');
       let b=result.$('table td a').text().split('(');
       crypto.push(b[0]);
-      crypto.push(a[11].replace(/ /g, "").replace(/\$/g, ""));
+      crypto.push(a[5].replace(/ /g, "").replace(/\$/g, ""));
       });
 
       appendFile(appendfile, crypto + '\n');
